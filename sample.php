@@ -1,5 +1,7 @@
 <?php
-  $age = 20;
-  $test ='テスト';
-  echo $age,$test;
+  $array = [1,2,3];
+
+  echo $array[0];
+
+  echo $array[2];
 ?>
