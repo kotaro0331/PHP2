@@ -2,34 +2,33 @@
 
    class Company
    {
-     
      protected $name;
-
-     protected getdisplayCompany(){
+     
+     public function getdisplayName(){
         return $this->name;
      }
 
-     protected setdisplayCompany($name){
+     public function setdisplayName($name){
         $this->name =$name;
      }
 
      protected $adress;
 
-      protected getdisplayCompany(){
+     public function getdisplayAd(){
         return $this->adress;
      }
 
-     protected setdisplayCompany($adress){
+     public function setdisplayAd($adress){
         $this->adress =$adress;
      }
 
      protected $tel;
       
-     protected getdisplayCompany(){
+     public function getdisplayTel(){
         return $this->tel;
      }
 
-     protected setdisplayCompany($tel){
+     public function setdisplayTel($tel){
         $this->tel =$tel;
      }}
 
@@ -39,51 +38,47 @@
     
     private $department;
 
-    private getdisplayDepartment(){
+    public function getdisplayDepart(){
         return  $this->department;
      }
 
-     private setdisplayDepartment($department){
+     public function setdisplayDepart($department){
         $this->department =  $department;
      }
 
      private $top;
 
-     private getdisplayDepartment(){
+     public function getdisplayTop(){
          return  $this->top;
       }
  
-      private setdisplayDepartment($top){
-         $this->topt =  $department;
+      public function setdisplayTop($top){
+         $this->top = $top;
       }
-           $this->top = $top;
+     }
+
+   $instance = new Company();
+   $instance->setdisplayName('サンプルA','サンプルB','サンプルC');
+   $instance->setdisplayAd('阿佐ヶ谷','新橋','池袋');
+   $instance->setdisplayTel('080-0000-0000','090-0000-0000','070-0000-0000');
+   $instance->setdisplayDepart('人事','総務','営業');
+   $top->setdisplayTop('田中','白石','水田');
+   
+   foreach($instance as $name){
+    echo $name->setdisplayName().'<br/>';
    }
 
-　　
-  $info = new Department();
-  $info->setName('サンプルA','サンプルB','サンプルC')
-  echo "会社名:"$info->GetName().;
- 
-   $name =('サンプルA','サンプルB','サンプルC')
-   $adress =('阿佐ヶ谷','新橋','池袋')
-   $tel =('080-0000-0000','090-0000-0000','070-0000-0000')
-   $department =('人事','総務','営業')
-   $top = ('田中','白石','水田')
-
-   foreach($name as $value){
-    echo "会社名:"$value.'<br/>';
+   foreach($instance as $adress){
+    echo $adress->setdisplayAd().'<br/>';
    }
-   foreach($adress as $value){
-    echo "住所:"$value.'<br/>';
+   foreach($instance as $tel){
+    echo $tel->setdisplayTel().'<br/>';
    }
-   foreach($tel as $value){
-    echo "電話番号:"$value.'<br/>';
+   foreach($instance as $department){
+    echo $department->setdisplayDepart().'<br/>';
    }
-   foreach($department as $value){
-    echo "部署名:"$value.'<br/>';
-   }
-   foreach($atop as $value){
-    echo "部長:"$value.'<br/>';
+   foreach($instance as $top){
+    echo $top->setdisplayTop().'<br/>';
    }
 
 ?>

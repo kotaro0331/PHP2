@@ -4,12 +4,11 @@ class Test
 {
  protected $num;
 
-　//同インスタンスで設定された$numを持ってくる関数
  public function getNum(){
     return $this->num;
  }
 
-　//指定された引数$valに入った値をnumに代入する関数
+
  public function setNum($value){
  $this->num = $value;
  }
