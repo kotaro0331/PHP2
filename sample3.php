@@ -8,8 +8,8 @@
         return $this->name;
      }
 
-     public function setdisplayName($name){
-        $this->name =$name;
+     public function setdisplayName($value){
+        $this->name =$value;
      }
 
      protected $adress;
@@ -18,8 +18,8 @@
         return $this->adress;
      }
 
-     public function setdisplayAd($adress){
-        $this->adress =$adress;
+     public function setdisplayAd($value){
+        $this->adress =$value;
      }
 
      protected $tel;
@@ -28,8 +28,8 @@
         return $this->tel;
      }
 
-     public function setdisplayTel($tel){
-        $this->tel =$tel;
+     public function setdisplayTel($value){
+        $this->tel =$value;
      }}
 
 
@@ -42,8 +42,8 @@
         return  $this->department;
      }
 
-     public function setdisplayDepart($department){
-        $this->department =  $department;
+     public function setdisplayDepart($value){
+        $this->department =$value;
      }
 
      private $top;
@@ -52,8 +52,8 @@
          return  $this->top;
       }
  
-      public function setdisplayTop($top){
-         $this->top = $top;
+      public function setdisplayTop($value){
+         $this->top =$value;
       }
      }
 
@@ -62,23 +62,22 @@
    $instance->setdisplayAd('阿佐ヶ谷','新橋','池袋');
    $instance->setdisplayTel('080-0000-0000','090-0000-0000','070-0000-0000');
    $instance->setdisplayDepart('人事','総務','営業');
-   $top->setdisplayTop('田中','白石','水田');
+   $instance->setdisplayTop('田中','白石','水田');
    
-   foreach($instance as $name){
-    echo $name->setdisplayName().'<br/>';
+   foreach($instance as $value){
+    echo $value->getdisplayName().'<br/>';
    }
-
-   foreach($instance as $adress){
-    echo $adress->setdisplayAd().'<br/>';
+   foreach($instance as $value){
+    echo $value->getdisplayAd().'<br/>';
    }
-   foreach($instance as $tel){
-    echo $tel->setdisplayTel().'<br/>';
+   foreach($instance as $value){
+    echo $value->getdisplayTel().'<br/>';
    }
-   foreach($instance as $department){
-    echo $department->setdisplayDepart().'<br/>';
+   foreach($instance as $value){
+    echo $value->getdisplayDepart().'<br/>';
    }
-   foreach($instance as $top){
-    echo $top->setdisplayTop().'<br/>';
+   foreach($instance as $value){
+    echo $value->getdisplayTop().'<br/>';
    }
 
 ?>
