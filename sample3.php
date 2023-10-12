@@ -3,81 +3,71 @@
    class Company
    {
      protected $name;
-     
-     public function getdisplayName(){
-        return $this->name;
-     }
-
-     public function setdisplayName($value){
-        $this->name =$value;
-     }
-
      protected $adress;
-
-     public function getdisplayAd(){
-        return $this->adress;
-     }
-
-     public function setdisplayAd($value){
-        $this->adress =$value;
-     }
-
      protected $tel;
-      
-     public function getdisplayTel(){
-        return $this->tel;
+     
+
+     public function __construct($name,$adress,$tel){
+         $this -> name = $name;
+
+         $this -> adress = $adress;
+
+         $this -> tel = $tel;
+
      }
 
-     public function setdisplayTel($value){
-        $this->tel =$value;
-     }}
-
-
-     class  Department extends Company
-     {
-    
-    private $department;
-
-    public function getdisplayDepart(){
-        return  $this->department;
+     public function getName(){
+        echo $this -> name;
      }
 
-     public function setdisplayDepart($value){
-        $this->department =$value;
+     public function getAdress(){
+        echo $this -> adress;
      }
 
+     public function getTel(){
+        echo $this -> tel;
+     }
+   }
+
+   class Department extends Company
+
+   {
+     private $part;
      private $top;
 
-     public function getdisplayTop(){
-         return  $this->top;
-      }
- 
-      public function setdisplayTop($value){
-         $this->top =$value;
-      }
+     public function __construct($name,$adress,$tel,$part,$top){
+      parent::__construct($name,$adress,$tel); 
+
+      
+      $this -> part = $part;
+
+      $this -> top = $top;
      }
 
-   $instance = new Company();
-   $instance->setdisplayName('サンプルA','サンプルB','サンプルC');
-   $instance->setdisplayAd('阿佐ヶ谷','新橋','池袋');
-   $instance->setdisplayTel('080-0000-0000','090-0000-0000','070-0000-0000');
-   $instance->setdisplayDepart('人事','総務','営業');
-   $instance->setdisplayTop('田中','白石','水田');
-   
-   foreach($instance as $value){
-    echo $value->getdisplayName().'<br/>';
-   }
-   foreach($instance as $value){
-    echo $value->getdisplayAd().'<br/>';
-   }
-   foreach($instance as $value){
-    echo $value->getdisplayTel().'<br/>';
-   }
-   foreach($instance as $value){
-    echo $value->getdisplayDepart().'<br/>';
-   }
-   foreach($instance as $value){
-    echo $value->getdisplayTop().'<br/>';
-   }
+     public function getPart(){
+        echo $this -> part;
+     }
+ 
+    public function getTop(){
+       echo $this -> top;
+     }
 
+   }
+   
+   $acompany = new Department("会社名:サンプルA","住所:阿佐ヶ谷","電話番号:080-0000-0000","部署:人事","部長:田中");
+   $bcompany = new Department("会社名:サンプルB","住所:新橋","電話番号:090-0000-0000","部署:総務","部長:白石");
+   $ccompany = new Department("会社名:サンプルC","住所:池袋","電話番号:070-0000-0000","部署:営業","部長:水田");
+
+   $items = array($acompany,$bcompany,$ccompany);
+
+
+foreach ($items as $item){
+          echo $item -> getName()."\n";
+          echo $item -> getAdress()."\n";
+          echo $item -> getTel()."\n";
+          echo $item -> getPart()."\n";
+          echo $item -> getTop()."\n"; 
+         
+      }
+          
 ?>

@@ -4,21 +4,23 @@ class Test
 {
  protected $num;
 
+
  public function getNum(){
-    return $this->num;
+    return $this ->num;
  }
 
-
- public function setNum($value){
- $this->num = $value;
+ public function setNum($val){
+ $this ->num = $val;
  }
+
 }
 
  $instance = new Test();
- $instance->setNum(5);
+ $instance ->setNum('5');
+ 
 
- foreach($instance as $value){
- echo $value->getNum();
- }
+foreach($instance as $val){
+echo $val ->getNum();
+}
 
 ?>
